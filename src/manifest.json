@@ -1,9 +1,26 @@
 {
-    "manifest_version": 3,
-    "name": "Hello Extensions",
-    "description": "Base Level Extension",
-    "version": "1.0",
+    "name": "Full search",
+    "description": "Better search.",
+    "version": "1.0.0",
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
     "action": {
-        "default_popup": "hello.html"
-    }
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "commands": {
+        "show_extension": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+F",
+                "mac": "Command+Shift+F"
+            },
+            "description": "Show the extension"
+        }
+    },
+    "manifest_version": 3
 }
